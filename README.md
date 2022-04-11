@@ -1,21 +1,57 @@
 # capacitor-plugin-color-scheme
 
-Detect the device's color scheme
+A plugin for Android to detect and watch for system theme changes. Currently the WebView does not populate the `prefers-color-scheme` property with their system dark mode.
 
-## Install
+## TODO: Install
 
 ```bash
 npm install capacitor-plugin-color-scheme
 npx cap sync
 ```
 
+## Example
+
+```typescript
+// Set current theme
+const result = await ColorScheme.getScheme({ fallbackScheme: 'Dark' });
+changeTheme(result.scheme === 'Dark');
+
+// Or, watch for theme changes
+ColorScheme.watchScheme((theme: { scheme: DeviceScheme }) => changeTheme(theme === 'Dark'), { fallbackScheme: 'Dark');
+
+// Function to apply theme
+function changeTheme(darkMode: boolean) {
+    const html = document.getElementsByTagName('html')[0];
+    html.classList.remove('dark', 'light');
+    html.classList.add(darkMode ? 'dark' : 'light');
+}
+```
+
+## Android Manifest
+
+Ensure that you have `uiMode` set in `android:configChanges`
+
+```xml
+<?xml version='1.0' encoding='utf-8'?>
+<manifest ...>
+    <application ...>
+        <activity android:configChanges="uiMode" ...>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
+```
+
 ## API
 
 <docgen-index>
 
-* [`getScheme(...)`](#getscheme)
-* [`watchScheme(...)`](#watchscheme)
-* [Type Aliases](#type-aliases)
+- [`getScheme(...)`](#getscheme)
+- [`watchScheme(...)`](#watchscheme)
+- [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -34,8 +70,7 @@ getScheme(options?: { fallbackScheme?: DeviceScheme | undefined; } | undefined) 
 
 **Returns:** <code>Promise&lt;{ scheme: <a href="#devicescheme">DeviceScheme</a>; }&gt;</code>
 
---------------------
-
+---
 
 ### watchScheme(...)
 
@@ -48,11 +83,9 @@ watchScheme(callback: (result: { scheme: DeviceScheme; }) => any, options?: { fa
 | **`callback`** | <code>(result: { scheme: <a href="#devicescheme">DeviceScheme</a>; }) =&gt; any</code> |
 | **`options`**  | <code>{ fallbackScheme?: <a href="#devicescheme">DeviceScheme</a>; }</code>            |
 
---------------------
-
+---
 
 ### Type Aliases
-
 
 #### DeviceScheme
 
