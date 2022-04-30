@@ -1,0 +1,76 @@
+{
+  "api": {
+    "name": "ColorSchemePlugin",
+    "slug": "colorschemeplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "getScheme",
+        "signature": "(options?: { fallbackScheme?: DeviceScheme | undefined; } | undefined) => Promise<{ scheme: DeviceScheme; }>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ fallbackScheme?: DeviceScheme | undefined; } | undefined"
+          }
+        ],
+        "returns": "Promise<{ scheme: DeviceScheme; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "DeviceScheme"
+        ],
+        "slug": "getscheme"
+      },
+      {
+        "name": "watchScheme",
+        "signature": "(callback: (result: { scheme: DeviceScheme; }) => any, options?: { fallbackScheme?: DeviceScheme | undefined; } | undefined) => Promise<void>",
+        "parameters": [
+          {
+            "name": "callback",
+            "docs": "",
+            "type": "(result: { scheme: DeviceScheme; }) => any"
+          },
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ fallbackScheme?: DeviceScheme | undefined; } | undefined"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "DeviceScheme"
+        ],
+        "slug": "watchscheme"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [
+    {
+      "name": "DeviceScheme",
+      "slug": "devicescheme",
+      "docs": "",
+      "types": [
+        {
+          "text": "'Unknown'",
+          "complexTypes": []
+        },
+        {
+          "text": "'Light'",
+          "complexTypes": []
+        },
+        {
+          "text": "'Dark'",
+          "complexTypes": []
+        }
+      ]
+    }
+  ],
+  "pluginConfigs": []
+}
