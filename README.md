@@ -49,9 +49,9 @@ Ensure that you have `uiMode` set in `android:configChanges`
 
 <docgen-index>
 
-- [`getScheme(...)`](#getscheme)
-- [`watchScheme(...)`](#watchscheme)
-- [Type Aliases](#type-aliases)
+* [`getScheme(...)`](#getscheme)
+* [`watchScheme(...)`](#watchscheme)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -70,7 +70,8 @@ getScheme(options?: { fallbackScheme?: DeviceScheme | undefined; } | undefined) 
 
 **Returns:** <code>Promise&lt;{ scheme: <a href="#devicescheme">DeviceScheme</a>; }&gt;</code>
 
----
+--------------------
+
 
 ### watchScheme(...)
 
@@ -83,9 +84,11 @@ watchScheme(callback: (result: { scheme: DeviceScheme; }) => any, options?: { fa
 | **`callback`** | <code>(result: { scheme: <a href="#devicescheme">DeviceScheme</a>; }) =&gt; any</code> |
 | **`options`**  | <code>{ fallbackScheme?: <a href="#devicescheme">DeviceScheme</a>; }</code>            |
 
----
+--------------------
+
 
 ### Type Aliases
+
 
 #### DeviceScheme
 
