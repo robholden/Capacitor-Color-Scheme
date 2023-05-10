@@ -8,7 +8,6 @@ public class ColorScheme
 {
     private final AppCompatActivity activity;
 
-
     public ColorScheme(AppCompatActivity activity)
     {
         this.activity = activity;
