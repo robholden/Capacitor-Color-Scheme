@@ -1,6 +1,6 @@
 {
   "name": "capacitor-plugin-color-scheme",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Detect the device's color scheme",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -41,8 +41,8 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "next",
-    "@capacitor/core": "next",
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
     "@capacitor/docgen": "0.0.18",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "~1.0.1",
@@ -56,7 +56,7 @@
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
-    "@capacitor/core": "next"
+    "@capacitor/core": "^6.0.0"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",
